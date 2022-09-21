@@ -14,10 +14,12 @@
 </head>
 <body>
     <header>
-        <div id="logo">
-            <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>✨</text></svg>">
+        <div id="logo-box">
+            <div id="logo">
+                <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>✨</text></svg>">
+            </div>
+            <h1>Example Docus page</h1>
         </div>
-        <h1>Example Docus page</h1>
         <div id="menu-content">
             <ul>
                 <li><a href="#">Docs</a></li>
@@ -25,7 +27,10 @@
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Community</a></li>
             </ul>
-            <input type="checkbox" name="dark">
+            <label class="switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
             <select name="lang" value="en">
                 <option value="en">EN</option>
                 <option value="fr">FR</option>
@@ -33,15 +38,101 @@
                 <option value="es">ES</option>
             </select>
         </div>
-        <span class="material-symbols-outlined">search</span>
-        <div id="menu"></div>
+        <div id="menu-buttons">
+            <span class="material-symbols-outlined">search</span>
+            <div id="menu"></div>
+        </div>
     </header>
     <main>
         <aside>
+            <div>
+                <h2>A Category</h2>
+                <h3 data="c1-p1">A Page title</h3>
+                <h3 data="c1-p2">A Page title</h3>
+                <h3 data="c1-p3">A Page title</h3>
+                <h3 data="c1-p4">A Page title</h3>
+                <h3 data="c1-p5">A Page title</h3>
+                <h3 data="c1-p6">A Page title</h3>
 
+                <h2>A Category</h2>
+                <h3 data="c2-p1">A Page title</h3>
+                <h3 data="c2-p2">A Page title</h3>
+                <h3 data="c2-p3">A Page title</h3>
+                <h3 data="c2-p4">A Page title</h3>
+                <h3 data="c2-p5">A Page title</h3>
+                <h3 data="c2-p6">A Page title</h3>
+
+                <h2>A Category</h2>
+                <h3 data="c3-p1">A Page title</h3>
+                <h3 data="c3-p2">A Page title</h3>
+                <h3 data="c3-p3">A Page title</h3>
+                <h3 data="c3-p4">A Page title</h3>
+                <h3 data="c3-p5">A Page title</h3>
+                <h3 data="c3-p6">A Page title</h3>
+
+                <h2>A Category</h2>
+                <h3 data="c4-p1">A Page title</h3>
+                <h3 data="c4-p2">A Page title</h3>
+                <h3 data="c4-p3">A Page title</h3>
+                <h3 data="c4-p4">A Page title</h3>
+                <h3 data="c4-p5">A Page title</h3>
+                <h3 data="c4-p6">A Page title</h3>
+
+                <footer>
+
+                </footer>
+            </div>
         </aside>
         <div>
+            <article id="c1-p1">
+                <!--Title-->
+                <h2>A Page title</h2>
 
+                <!--Paragraph accept markdown highlights-->
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque pariatur sit beatae quaerat, consequuntur officia quibusdam totam repellendus deleniti enim accusamus error nobis, unde neque. Ullam a veniam at odit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eveniet corrupti, inventore itaque totam exercitationem quibusdam adipisci? Voluptas nulla iusto corporis autem laborum voluptatem assumenda odit quis magni, cum modi.</p>                
+            
+                <!--Blockquote-->
+                <blockquote class="bq-warn">
+                    <div><span class="material-symbols-outlined">warning</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <blockquote class="bq-error">
+                    <div><span class="material-symbols-outlined">error</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <blockquote class="bq-new_releases">
+                    <div><span class="material-symbols-outlined">new_releases</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <blockquote class="bq-info">
+                    <div><span class="material-symbols-outlined">info</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <blockquote class="bq-help">
+                    <div><span class="material-symbols-outlined">help</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <blockquote class="bq-tips_and_updates">
+                    <div><span class="material-symbols-outlined">tips_and_updates</span><h3>Highlight name</h3></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum numquam velit laudantium vero voluptas. Cumque, dolorum tenetur, vitae deserunt sed inventore iste necessitatibus distinctio iusto quisquam deleniti facilis modi?</p>
+                </blockquote>
+
+                <!--Code-->
+                <pre lang="cpp">
+#include &#60;iostream>
+using namespace std;
+
+int main () {
+    cout &#60;&#60; "Hello World!";
+    return 0;
+}
+                </pre>
+            </article>
         </div>
     </main>
 </body>
