@@ -304,37 +304,50 @@ main {
     position: fixed;
     display: flex;
 }
-main aside:last-child {
+main > aside > div::-webkit-scrollbar, article::-webkit-scrollbar {
+    width: 10px;
+}
+article::-webkit-scrollbar-thumb {
+    background: var(--color);
+}
+main > aside > div::-webkit-scrollbar-track, article::-webkit-scrollbar-track {
+    background: var(--background);
+} 
+main > aside > div::-webkit-scrollbar-thumb {
+    background: var(--scolor);
+}
+
+main aside#ref {
     position: absolute;
     width: 20%;
-    height: 96%;
-    top: calc(50%);
-    transform: translateY(-50%);
-    left: calc(80% - 16px);
+    height: calc(100% - 40px);
+    top: 0px;
+    right: 17px;
     border: none;
     border-left: 2px solid var(--scolor);
     padding: 20px;
 }
-main aside:last-child > div {
+main aside#ref > div {
     height: 70%;
+    max-height: calc(100% - 175px);
+    width: 85%;
 }
-main aside:last-child ul {
-    width: 67.5%;
+main aside#ref > div::-webkit-scrollbar {
+    width: 0px;
 }
-main aside:last-child footer {
+main aside#ref footer {
     position: absolute;
     bottom: 25px;
-    width: 70%;
+    left: 0px;
+    width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-around;
 }
-main aside:last-child footer img {
+main aside#ref footer img {
     height: 40px;
 }
-main article {
-    position: relative;
-}
+
 aside {
     min-width: 250px;
     width: 75%;
@@ -362,14 +375,10 @@ main aside div h3 {
 main aside div h3:hover {
     opacity: 1;
 }
-main aside div footer {
-    width: calc(100% - 30px);
-    margin-top: 30px;
-}
-main div {
-    overflow: auto;
-}
-main div article {
+main article {
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
@@ -478,7 +487,9 @@ li {
     position: relative;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
     padding-left: 30px;
-    position: relative;
+}
+.code > div {
+    overflow-x: auto;
 }
 .code > span {
     position: absolute;
@@ -521,7 +532,7 @@ pre span:before {
     background: rgba(51, 50, 54, 0.356);
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 #research-input {
     position: relative;
@@ -542,4 +553,11 @@ pre span:before {
     width: 40%;
     height: 220px;
     background: var(--background);
+}
+main aside div span:last-child {
+    height: 35px;
+    display: flex;
+}
+article div {
+    width: 85%;
 }
