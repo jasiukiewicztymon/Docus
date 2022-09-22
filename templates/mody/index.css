@@ -307,7 +307,7 @@ main {
 main aside:last-child {
     position: absolute;
     width: 20%;
-    height: 94%;
+    height: 96%;
     top: calc(50%);
     transform: translateY(-50%);
     left: calc(80% - 16px);
