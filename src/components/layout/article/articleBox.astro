@@ -1,0 +1,27 @@
+<main id="documentation" data-page="1">
+    <slot />
+</main>
+<script>
+    for (let i = 1; i <= document.getElementById('documentation').childElementCount; i++)
+        document.getElementById('documentation').childNodes[i].classList.remove('opennedArticle')
+
+    document.getElementById('documentation').childNodes[document.getElementById('documentation').hasAttribute('data-page') ? document.getElementById('documentation').getAttribute('data-page') : 1].classList.add('opennedArticle')
+
+    new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' ? mutation.attributeName == 'data-page' : false) {
+                for (let i = 1; i <= document.getElementById('documentation').childElementCount; i++)
+                    i != document.getElementById('documentation').getAttribute('data-page') ? document.getElementById('documentation').childNodes[i].classList.remove('opennedArticle') : null
+
+                document.getElementById('documentation').childNodes[document.getElementById('documentation').hasAttribute('data-page') ? document.getElementById('documentation').getAttribute('data-page') : 1].classList.add('opennedArticle')
+            }
+        });
+    }).observe(document.getElementById('documentation'), {
+        attributes: true 
+    });
+</script>
+<style global>
+    #documentation article:not(.opennedArticle) {
+        display: none;
+    }
+</style>
