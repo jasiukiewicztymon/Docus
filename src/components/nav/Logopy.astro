@@ -1,0 +1,126 @@
+---
+import ResearchBox from '../ResearchBox.astro';
+import DarkModeSwitch from '../DarkModeSwitch.astro';
+import TranslationBox from '../TranslationBox.astro';
+
+let { logoSrc = 'true', logoHref = '', links = '', researchZone = false, darkMode = false, translation = false, mobileBreakPoint = '0px' } = Astro.props
+
+links = links.split(' ')
+for (let i = 0; i < links.length; i++) {
+    links[i] = {
+        label: links[i].split(':')[0],
+        href: links[i].split(':')[1]
+    }
+}
+
+const style = `
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav {
+    width: 100%;
+    height: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
+nav > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1700px;
+    gap: 20px;
+    position: relative;
+}
+nav > div > div:first-child {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+nav > div > div:first-child img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+nav > div > div:nth-child(2) {
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+nav > div > div:nth-child(2) > div:last-child {
+    width: calc(100% - 420px);
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 40px;
+}
+nav > div > div:nth-child(2) > div:last-child > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+nav > div > div:nth-child(2) > div:last-child > div:last-child {
+    display: flex;
+    gap: 10px;
+}
+span {
+    font-size: 60px !important;
+    align-self: center;
+    display: none !important;
+}
+
+@media screen and (max-width: ${mobileBreakPoint}) {
+    nav > div > div:nth-child(2) {
+        width: 100%;
+        height: calc(calc(100% * 5) / 2);
+        transform: translateY(calc(calc(100% * 2) / 5));
+        position: absolute;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-rigth: 10px;
+    }
+    span {
+        display: flex !important;
+    }
+}
+`
+---
+
+<nav>
+    <div>
+        <div>
+            <a href={logoHref}><img src={logoSrc} /></a>
+        </div>
+        <div>
+            {researchZone ? <ResearchBox /> : null}
+            <div>
+                <div>
+                    {links.map((link) => (
+                        <>
+                          <a href={link.href}>{link.label}</a>
+                        </>
+                    ))}
+                    <slot />
+                </div>
+                <div>
+                    {darkMode ? <DarkModeSwitch /> : null}
+                    {translation ? <TranslationBox /> : null}
+                </div>
+            </div>
+        </div>
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+</nav>
+<style set:html={style}></style>
+<script>
+
+</script>
